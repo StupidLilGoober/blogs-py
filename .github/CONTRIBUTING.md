@@ -1,6 +1,6 @@
 # Contribution Guidelines
-> Remember: These are *guidelines*, not *rules*,
-> if the only way to improve upon this project
+> Remember: These are *guidelines*, not *rules*.
+> If the only way to improve upon this project
 > or fix a problem is to break/bend a guideline,
 > then do it. Code will never be beautiful anyway.
 
