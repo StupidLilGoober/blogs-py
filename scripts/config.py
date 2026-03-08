@@ -36,6 +36,7 @@ default_config_json = json.dumps(default_config, indent=2)
 
 def writeStyle(path, config):
 	with open(path, "w") as file:
+		file.write("/* auto-generated */\n")
 		file.write("html {\n")
 		for i in config["style"]:
 			file.write("	"+i["key"]+":"+i["value"]+";"+"\n")
@@ -46,13 +47,10 @@ def writeStyle(path, config):
 		file.write("	border-radius:0.5em;\n")
 		file.write("	font-family:monospace;\n")
 		file.write("	margin: 0.2em;\n")
+		file.write("}\n")
+		file.write("a {\n")
+		file.write("	color: lightblue;\n")
+		file.write("}\n")
+		file.write("a:hover {\n")
+		file.write("	color: white;\n")
 		file.write("}")
-
-bloglist_html = """
-<!DOCTYPE html>
-<head>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<h1>Blogs<h2>
-</body>"""
