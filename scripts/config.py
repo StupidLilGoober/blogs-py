@@ -39,6 +39,13 @@ def writeStyle(path, config):
 		file.write("html {\n")
 		for i in config["style"]:
 			file.write("	"+i["key"]+":"+i["value"]+";"+"\n")
+		file.write("}\n")
+
+		file.write("code {\n")
+		file.write("	background-color:black;\n")
+		file.write("	border-radius:0.5em;\n")
+		file.write("	font-family:monospace;\n")
+		file.write("	margin: 0.2em;\n")
 		file.write("}")
 
 bloglist_html = """

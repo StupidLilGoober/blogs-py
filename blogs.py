@@ -24,6 +24,7 @@ def newBlog(name):
 	os.mkdir(name + "/src")
 	with open(name + "/src/" + f"{date.today()}" + ".md", "w") as file:
 		file.write("# Title")
+		file.write("*date*")
 
 def build(name):
 	with open("blogs.json", "r") as file:
@@ -41,6 +42,11 @@ def build(name):
 					htmlfile.write('<link rel="stylesheet" href="../style.css">\n')
 					htmlfile.write(html)
 
+def newArticle():
+	with open("blogs/src/" + f"{date.today()}" + ".md", "w") as file:
+		file.write("# Title\n")
+		file.write("*date*")
+
 try:
 	args[1] = args[1]
 except IndexError:
@@ -52,3 +58,6 @@ if args[1] == "new":
 
 if args[1] == "build":
 	build("blogs")
+
+if args[1] == "blog":
+	newArticle()
