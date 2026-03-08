@@ -25,6 +25,10 @@ default_config = {
 		{
 			"key":"text-align",
 			"value":"center"
+		},
+		{
+			"key":"font-family",
+			"value":"sans-serif"
 		}
 	]
 }

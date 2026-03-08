@@ -1,6 +1,7 @@
 import scripts
 import scripts.config
 import markdown as md
+import json
 from datetime import date
 
 import sys
@@ -25,6 +26,11 @@ def newBlog(name):
 		file.write("# Title")
 
 def build(name):
+	with open("blogs.json", "r") as file:
+		conf = json.load(file)
+		scripts.config.writeStyle(name+"/style.css", conf)
+	
+	# build markdown blogs
 	for dirpath, dirname, filenames in os.walk("blogs/src"):
 		for filename in filenames:
 			file_path = os.path.join(dirpath, filename)

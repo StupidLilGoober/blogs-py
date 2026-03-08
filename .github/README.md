@@ -1,5 +1,5 @@
 # blogs.py
-A blog generator for websites.
+A blog generator for websites using Markdown.
 
 ```
 python blogs.py new
