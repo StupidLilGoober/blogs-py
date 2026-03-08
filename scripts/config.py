@@ -34,7 +34,7 @@ default_config = {
 }
 default_config_json = json.dumps(default_config, indent=2)
 
-def writeStyle(path, config):
+def write_style(path, config):
 	with open(path, "w") as file:
 		file.write("/* auto-generated */\n")
 		file.write("html {\n")

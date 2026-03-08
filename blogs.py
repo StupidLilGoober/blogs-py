@@ -9,7 +9,7 @@ import os
 
 args = sys.argv
 
-def newBlog(name):
+def new_blog(name):
 	try:
 		os.mkdir(name)
 	except FileExistsError:
@@ -17,7 +17,7 @@ def newBlog(name):
 		quit(1)
 	with open("blogs.json", "w") as file:
 		file.write(scripts.config.default_config_json)
-	scripts.config.writeStyle(name+"/style.css", scripts.config.default_config)
+	scripts.config.write_style(name+"/style.css", scripts.config.default_config)
 	os.mkdir(name + "/html")
 	os.mkdir(name + "/src")
 	with open(name + "/src/" + f"{date.today()}" + ".md", "w") as file:
@@ -65,7 +65,7 @@ except IndexError:
 	quit(1)
 
 if args[1] == "new":
-	newBlog("blogs")
+	new_blog("blogs")
 
 if args[1] == "build":
 	build("blogs")
