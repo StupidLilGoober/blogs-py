@@ -1,3 +1,4 @@
+"""Configuration and reused file-writing functions."""
 import json
 
 default_config = {
@@ -35,7 +36,9 @@ default_config = {
 default_config_json = json.dumps(default_config, indent=2)
 
 def write_style(path, config):
-	with open(path, "w") as file:
+	"""Write `style.css` file."""
+	
+	with open(path, "w", encoding="utf8") as file:
 		file.write("/* auto-generated */\n")
 		file.write("html {\n")
 		for i in config["style"]:
