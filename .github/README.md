@@ -9,8 +9,8 @@ python blogs.py new
 | Command | Parameters      | Function                    |
 | :-----: | :--------:      | --------                    |
 | `new`   | N/A             | New blog folder             |
-| `blog`  | `<blog_name>`   | New blog                    |
-| `build` | `<build_blogs>` | Build blogs from MD to HTML |
+| `blog`  | N/A             | New blog                    |
+| `build` | N/A             | Build blogs from MD to HTML |
 
 ## Dependencies
 * Python-Markdown
