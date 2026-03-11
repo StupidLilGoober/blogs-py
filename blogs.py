@@ -1,5 +1,4 @@
-import scripts
-import scripts.config
+import config
 import markdown as md
 import json
 from datetime import date
@@ -16,8 +15,8 @@ def newBlog(name):
 		print("that blog already exists")
 		quit(1)
 	with open("blogs.json", "w") as file:
-		file.write(scripts.config.default_config_json)
-	scripts.config.writeStyle(name+"/style.css", scripts.config.default_config)
+		file.write(config.default_config_json)
+	config.writeStyle(name+"/style.css", config.default_config)
 	os.mkdir(name + "/html")
 	os.mkdir(name + "/src")
 	with open(name + "/src/" + f"{date.today()}" + ".md", "w") as file:
@@ -27,7 +26,7 @@ def newBlog(name):
 def build(name):
 	with open("blogs.json", "r") as file:
 		conf = json.load(file)
-		scripts.config.writeStyle(name+"/style.css", conf)
+		config.writeStyle(name+"/style.css", conf)
 	try:
 		os.remove(name + "/index.html")
 	except FileNotFoundError:
